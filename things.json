@@ -1,0 +1,617 @@
+const things = {
+    "Default Resources": {
+        "metal": 20,
+        "metal_cost": false,
+        "energy": 2000,
+        "energy_cost": false,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "building"
+        ]
+    },
+    "Metal Extractor": {
+        "metal": 7,
+        "metal_cost": 100,
+        "energy": 0,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "building"
+        ]
+    },
+    "Advanced Metal Extractor": {
+        "metal": 15,
+        "metal_cost": 100,
+        "energy": 0,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "building"
+        ]
+    },
+    "Metal Extractor Combined": {
+        "metal": 22,
+        "metal_cost": 100,
+        "energy": 0,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "building"
+        ]
+    },
+    "Energy Plant": {
+        "metal": 0,
+        "metal_cost": 100,
+        "energy": 600,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "building"
+        ]
+    },
+    "Advanced Energy Plant": {
+        "metal": 0,
+        "metal_cost": 100,
+        "energy": 3750,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "building"
+        ]
+    },
+    "Jig": {
+        "metal": 36,
+        "metal_cost": 100,
+        "energy": 9000,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "building"
+        ]
+    },
+    "Icarus": {
+        "metal": 0,
+        "metal_cost": 100,
+        "energy": 175,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "unit"
+        ]
+    },
+    "Solar Array": {
+        "metal": 0,
+        "metal_cost": 100,
+        "energy": 2500,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "unit"
+        ]
+    },
+    "Commander": {
+        "metal": -30,
+        "metal_cost": 100,
+        "energy": -1750,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "builder",
+            "unit"
+        ]
+    },
+    "Colonel": {
+        "metal": -80,
+        "metal_cost": 100,
+        "energy": -2500,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "builder",
+            "unit"
+        ]
+    },
+    "Fabrication Bot": {
+        "metal": -8,
+        "metal_cost": 100,
+        "energy": -600,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "builder",
+            "unit"
+        ]
+    },
+    "Fabrication Vehicle": {
+        "metal": -11,
+        "metal_cost": 100,
+        "energy": -700,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "builder",
+            "unit"
+        ]
+    },
+    "Fabrication Aircraft": {
+        "metal": -9,
+        "metal_cost": 100,
+        "energy": -800,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "builder",
+            "unit"
+        ]
+    },
+    "Fabrication Ship": {
+        "metal": -14,
+        "metal_cost": 100,
+        "energy": -800,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "builder",
+            "unit"
+        ]
+    },
+    "Orbital Fabrication Bot": {
+        "metal": -45,
+        "metal_cost": 100,
+        "energy": -1500,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "builder",
+            "unit"
+        ]
+    },
+    "Advanced Fabrication Bot": {
+        "metal": -45,
+        "metal_cost": 100,
+        "energy": -1800,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "builder",
+            "unit"
+        ]
+    },
+    "Advanced Fabrication Vehicle": {
+        "metal": -60,
+        "metal_cost": 100,
+        "energy": -2250,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "builder",
+            "unit"
+        ]
+    },
+    "Advanced Fabrication Aircraft": {
+        "metal": -54,
+        "metal_cost": 100,
+        "energy": -2250,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "builder",
+            "unit"
+        ]
+    },
+    "Advanced Fabrication Ship": {
+        "metal": -80,
+        "metal_cost": 100,
+        "energy": -2500,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "builder",
+            "unit"
+        ]
+    },
+    "Stitch": {
+        "metal": -30,
+        "metal_cost": 100,
+        "energy": -400,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "builder",
+            "unit"
+        ]
+    },
+    "Barnacle": {
+        "metal": -45,
+        "metal_cost": 100,
+        "energy": -400,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "builder",
+            "unit"
+        ]
+    },
+    "Mend": {
+        "metal": -60,
+        "metal_cost": 100,
+        "energy": -800,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "builder",
+            "unit"
+        ]
+    },
+    "Angel": {
+        "metal": -120,
+        "metal_cost": 100,
+        "energy": -400,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "builder",
+            "unit"
+        ]
+    },
+    "Spark": {
+        "metal": 0,
+        "metal_cost": 100,
+        "energy": -200,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "unit"
+        ]
+    },
+    "Bot Factory": {
+        "metal": -15,
+        "metal_cost": 100,
+        "energy": -675,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "factory",
+            "building"
+        ]
+    },
+    "Vehicle Factory": {
+        "metal": -15,
+        "metal_cost": 100,
+        "energy": -675,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "factory",
+            "building"
+        ]
+    },
+    "Aircraft Factory": {
+        "metal": -15,
+        "metal_cost": 100,
+        "energy": -675,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "factory",
+            "building"
+        ]
+    },
+    "Naval Factory": {
+        "metal": -20,
+        "metal_cost": 100,
+        "energy": -800,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "factory",
+            "building"
+        ]
+    },
+    "Orbital Launcher": {
+        "metal": -30,
+        "metal_cost": 100,
+        "energy": -1000,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "factory",
+            "building"
+        ]
+    },
+    "Orbital Factory": {
+        "metal": -60,
+        "metal_cost": 100,
+        "energy": -2000,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "factory",
+            "building"
+        ]
+    },
+    "Advanced Bot Factory": {
+        "metal": -45,
+        "metal_cost": 100,
+        "energy": -1500,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "factory",
+            "building"
+        ]
+    },
+    "Advanced Vehicle Factory": {
+        "metal": -45,
+        "metal_cost": 100,
+        "energy": -1500,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "factory",
+            "building"
+        ]
+    },
+    "Advanced Aircraft Factory": {
+        "metal": -45,
+        "metal_cost": 100,
+        "energy": -1500,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "factory",
+            "building"
+        ]
+    },
+    "Advanced Naval Factory": {
+        "metal": -60,
+        "metal_cost": 100,
+        "energy": -1750,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "factory",
+            "building"
+        ]
+    },
+    "Unit Cannon": {
+        "metal": -45,
+        "metal_cost": 100,
+        "energy": -2250,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "factory",
+            "building"
+        ]
+    },
+    "Lob": {
+        "metal": 0,
+        "metal_cost": 100,
+        "energy": -15,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "factory",
+            "building"
+        ]
+    },
+    "Teleporter": {
+        "metal": 0,
+        "metal_cost": 100,
+        "energy": -1000,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "building"
+        ]
+    },
+    "Helios": {
+        "metal": 0,
+        "metal_cost": 100,
+        "energy": -1000,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "unit"
+        ]
+    },
+    "Radar": {
+        "metal": 0,
+        "metal_cost": 100,
+        "energy": -150,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "building"
+        ]
+    },
+    "Advanced Radar": {
+        "metal": 0,
+        "metal_cost": 100,
+        "energy": -4000,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "building"
+        ]
+    },
+    "ARKYD": {
+        "metal": 0,
+        "metal_cost": 100,
+        "energy": -700,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "unit"
+        ]
+    },
+    "Advanced Radar Satellite": {
+        "metal": 0,
+        "metal_cost": 100,
+        "energy": -9000,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "unit"
+        ]
+    },
+    "SSX-1304 Laser Platform": {
+        "metal": 0,
+        "metal_cost": 100,
+        "energy": -3000,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "unit"
+        ]
+    },
+    "Artemis": {
+        "metal": 0,
+        "metal_cost": 100,
+        "energy": -200,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "unit"
+        ]
+    },
+    "Pelter": {
+        "metal": 0,
+        "metal_cost": 100,
+        "energy": -200,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "building"
+        ]
+    },
+    "Holkins": {
+        "metal": 0,
+        "metal_cost": 100,
+        "energy": -2500,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "building"
+        ]
+    },
+    "Nuclear Missile Launcher": {
+        "metal": -90,
+        "metal_cost": 100,
+        "energy": -6000,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "building"
+        ]
+    },
+    "Anti-Nuke Launcher": {
+        "metal": -60,
+        "metal_cost": 100,
+        "energy": -4000,
+        "energy_cost": 100,
+        "img": "picme",
+        "description": "a very nice unit",
+        "url": "wiki",
+        "type": [
+            "building"
+        ]
+    }
+}
